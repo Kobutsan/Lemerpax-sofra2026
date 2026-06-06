@@ -58,6 +58,12 @@ export default function LoginScreen() {
         leaving ? "opacity-0" : "opacity-100"
       }`}
     >
+      {/* Rideau d'entrée, comme sur la galerie */}
+      <div aria-hidden className="curtain">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo-lemer-pax.webp" alt="" className="curtain-logo" />
+      </div>
+
       {/* Photo plein écran, zoom/balayage lent (Ken Burns) */}
       <div aria-hidden className="absolute inset-0 overflow-hidden">
         <div
@@ -111,19 +117,19 @@ export default function LoginScreen() {
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-12 text-center">
         <p
           className="appear text-xs font-medium tracking-[0.2em] text-white/85 uppercase drop-shadow-[0_1px_6px_rgba(18,56,64,0.7)] sm:text-sm"
-          style={{ animationDelay: "0.15s" }}
+          style={{ animationDelay: "0.95s" }}
         >
           SOFRA&nbsp;2026
         </p>
 
         <h1 className="mt-6 font-serif text-[clamp(2.8rem,6.5vw,5.2rem)] leading-[1.04] font-medium text-white drop-shadow-[0_2px_16px_rgba(18,56,64,0.5)]">
           <span className="line-mask">
-            <span className="line-up" style={{ animationDelay: "0.3s" }}>
+            <span className="line-up" style={{ animationDelay: "1.05s" }}>
               Soirée
             </span>
           </span>
           <span className="line-mask">
-            <span className="line-up" style={{ animationDelay: "0.42s" }}>
+            <span className="line-up" style={{ animationDelay: "1.18s" }}>
               Lemer&nbsp;Pax
             </span>
           </span>
@@ -133,7 +139,7 @@ export default function LoginScreen() {
             composition symétrique autour du titre */}
         <p
           className="appear mt-6 text-xs font-medium tracking-[0.2em] text-white/85 uppercase drop-shadow-[0_1px_6px_rgba(18,56,64,0.7)] sm:text-sm"
-          style={{ animationDelay: "0.6s" }}
+          style={{ animationDelay: "1.35s" }}
         >
           Mercredi 10 juin 2026&nbsp;·&nbsp;Cala&nbsp;d&rsquo;Orzu&nbsp;·&nbsp;Corse
         </p>
@@ -142,7 +148,7 @@ export default function LoginScreen() {
         <form
           onSubmit={handleSubmit}
           className={`appear mt-12 w-full max-w-md sm:mt-14 ${error ? "animate-shake" : ""}`}
-          style={{ animationDelay: "0.75s" }}
+          style={{ animationDelay: "1.5s" }}
         >
           <div className="relative">
             <label htmlFor="access-code" className="sr-only">
@@ -226,7 +232,7 @@ export default function LoginScreen() {
 
       {/* Pied de page */}
       <footer className="relative z-10 px-6 pb-6 text-center sm:pb-8">
-        <p className="appear text-[0.65rem] tracking-[0.16em] text-white/65 uppercase sm:text-xs" style={{ animationDelay: "0.9s" }}>
+        <p className="appear text-[0.65rem] tracking-[0.16em] text-white/65 uppercase sm:text-xs" style={{ animationDelay: "1.65s" }}>
           Accès réservé aux invités&nbsp;·&nbsp;Lemer&nbsp;Pax&nbsp;×&nbsp;SoFRa
         </p>
       </footer>

@@ -112,11 +112,11 @@ body {
   animation: curtain-up 0.85s cubic-bezier(0.76, 0, 0.24, 1) 0.55s forwards;
   pointer-events: none;
 }
-.curtain-label {
-  color: rgba(243, 236, 221, 0.8);
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+.curtain-logo {
+  height: 1.5rem;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
   animation: fade-out 0.45s ease 0.5s forwards;
 }
 /* Titre révélé ligne par ligne, par masque.

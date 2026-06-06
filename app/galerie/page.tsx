@@ -27,7 +27,8 @@ export default function GaleriePage() {
     <div className="min-h-dvh overflow-x-clip">
       {/* Rideau d'entrée */}
       <div aria-hidden className="curtain">
-        <span className="curtain-label">Lemer&nbsp;Pax&nbsp;—&nbsp;SOFRA&nbsp;2026</span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo-lemer-pax.webp" alt="" className="curtain-logo" />
       </div>
 
       {/* Barre fixe minimale : logo + actions */}
