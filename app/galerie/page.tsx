@@ -69,10 +69,21 @@ export default function GaleriePage() {
       {/* En-tête éditorial : titre géant révélé ligne par ligne, mot de
           remerciement en colonne droite. Fond : mesh gradient + particules. */}
       <header className="relative overflow-hidden">
-        <div aria-hidden className="pointer-events-none absolute inset-0">
-          <div className="animate-aurora-1 absolute -top-40 -left-32 size-[34rem] rounded-full bg-sea/10 blur-3xl" />
-          <div className="animate-aurora-2 absolute top-8 right-[-12%] h-[26rem] w-[40rem] rounded-full bg-olive/10 blur-3xl" />
-          <div className="animate-aurora-3 absolute bottom-[-35%] left-1/3 h-[22rem] w-[34rem] rounded-full bg-sand-deep/25 blur-3xl" />
+        {/* Le masque fond les nappes vers le bas : aucune ne touche le bord
+            de l'overflow-hidden (sinon ligne de démarcation visible) */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            maskImage:
+              "linear-gradient(180deg, black 0%, black 55%, transparent 92%)",
+            WebkitMaskImage:
+              "linear-gradient(180deg, black 0%, black 55%, transparent 92%)",
+          }}
+        >
+          <div className="animate-aurora-1 absolute -top-40 -left-32 size-[34rem] rounded-full bg-sea/8 blur-3xl" />
+          <div className="animate-aurora-2 absolute top-8 right-[-12%] h-[26rem] w-[40rem] rounded-full bg-olive/8 blur-3xl" />
+          <div className="animate-aurora-3 absolute bottom-[-35%] left-1/3 h-[22rem] w-[34rem] rounded-full bg-sand-deep/10 blur-3xl" />
         </div>
         <Particles className="pointer-events-none absolute inset-0 size-full" />
 
