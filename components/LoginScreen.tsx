@@ -151,10 +151,13 @@ export default function LoginScreen() {
         </p>
 
         {/* Champ pilule en verre dépoli */}
+        {/* Pas d'animation d'apparition ici : un fondu d'opacité retarde le
+            rendu du backdrop-blur (contexte d'empilement). Le rideau noir
+            couvre déjà le chargement — le champ doit être prêt, blur actif,
+            dès la levée. */}
         <form
           onSubmit={handleSubmit}
-          className={`appear mt-12 w-full max-w-md sm:mt-14 ${error ? "animate-shake" : ""}`}
-          style={{ animationDelay: "1.5s" }}
+          className={`mt-12 w-full max-w-md sm:mt-14 ${error ? "animate-shake" : ""}`}
         >
           <div className="relative">
             <label htmlFor="access-code" className="sr-only">
