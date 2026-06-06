@@ -16,8 +16,11 @@ next-env.d.ts
 /raw-photos
 /IMG_*.jpeg
 /IMG_*.jpg
-# Photos de démo (scripts/demo-photos.ts)
-/public/demo
+# Photos de démo (scripts/demo-photos.ts) — TEMPORAIREMENT committées pour
+# la validation client sur Vercel (50 vignettes, ~10 Mo). À ré-exclure et
+# retirer du repo lors de l'ingestion des vraies photos :
+#   git rm -r --cached public/demo && décommenter la ligne ci-dessous
+# /public/demo
 # (exception : public/cover.webp, asset optimisé de l'écran d'accès)
 
 # Vercel
