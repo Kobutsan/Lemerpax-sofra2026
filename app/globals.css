@@ -108,7 +108,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-sea-deep);
+  background: #000;
   animation: curtain-up 0.85s cubic-bezier(0.76, 0, 0.24, 1) 0.55s forwards;
   pointer-events: none;
 }

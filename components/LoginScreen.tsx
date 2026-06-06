@@ -59,7 +59,7 @@ export default function LoginScreen() {
           flash blanc pendant la navigation */}
       <div
         aria-hidden
-        className={`fixed inset-0 z-[90] bg-sea-deep transition-opacity duration-700 ease-out ${
+        className={`fixed inset-0 z-[90] bg-black transition-opacity duration-700 ease-out ${
           leaving ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       />
