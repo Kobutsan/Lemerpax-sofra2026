@@ -113,8 +113,8 @@ body {
   pointer-events: none;
 }
 .curtain-logo {
-  height: 1.5rem;
-  width: auto;
+  width: clamp(16rem, 38vw, 32rem);
+  height: auto;
   filter: brightness(0) invert(1);
   opacity: 0.9;
   animation: fade-out 0.45s ease 0.5s forwards;
