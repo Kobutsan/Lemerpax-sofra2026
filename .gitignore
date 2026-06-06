@@ -1,0 +1,33 @@
+# Dependencies
+/node_modules
+
+# Next.js
+/.next
+/out
+*.tsbuildinfo
+next-env.d.ts
+
+# Env — secrets, jamais committés
+.env
+.env.*
+!.env.example
+
+# Photos sources — JAMAIS dans le repo (règle architecturale n°3)
+/raw-photos
+/IMG_*.jpeg
+/IMG_*.jpg
+# Photos de démo (scripts/demo-photos.ts)
+/public/demo
+# (exception : public/cover.webp, asset optimisé de l'écran d'accès)
+
+# Vercel
+.vercel
+
+# Divers
+.DS_Store
+
+# NOTE : data/photos.json et data/archive.json DOIVENT être committés
+# (c'est le manifeste lu par l'app — il ne contient que des URLs et métadonnées).
+
+# Artefacts de session locale
+/.claude/
