@@ -66,7 +66,7 @@ export default function Particles({ className }: { className?: string }) {
         const alpha = p.base * (0.55 + 0.45 * Math.sin(p.phase * 0.9));
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(20, 66, 94, ${alpha.toFixed(3)})`;
+        ctx.fillStyle = `rgba(31, 148, 168, ${alpha.toFixed(3)})`;
         ctx.fill();
       }
       raf = requestAnimationFrame(tick);

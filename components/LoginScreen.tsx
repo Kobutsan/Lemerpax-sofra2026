@@ -77,7 +77,7 @@ export default function LoginScreen() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(13,47,69,0.18) 0%, rgba(13,47,69,0.30) 30%, rgba(13,47,69,0.46) 52%, rgba(13,47,69,0.34) 76%, rgba(13,47,69,0.22) 100%)",
+            "linear-gradient(180deg, rgba(18,56,64,0.18) 0%, rgba(18,56,64,0.30) 30%, rgba(18,56,64,0.46) 52%, rgba(18,56,64,0.34) 76%, rgba(18,56,64,0.22) 100%)",
         }}
       />
 
@@ -88,7 +88,7 @@ export default function LoginScreen() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 72% 52% at 50% 55%, rgba(13,47,69,0.36) 0%, rgba(13,47,69,0.20) 55%, transparent 82%)",
+            "radial-gradient(ellipse 72% 52% at 50% 55%, rgba(18,56,64,0.36) 0%, rgba(18,56,64,0.20) 55%, transparent 82%)",
         }}
       />
 
@@ -110,19 +110,15 @@ export default function LoginScreen() {
       {/* Bloc central */}
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-12 text-center">
         <p
-          className="appear flex items-center gap-3 font-display text-xs font-medium tracking-[0.28em] text-white/85 uppercase drop-shadow-[0_1px_6px_rgba(13,47,69,0.7)] sm:text-sm"
+          className="appear text-xs font-medium tracking-[0.2em] text-white/85 uppercase drop-shadow-[0_1px_6px_rgba(18,56,64,0.7)] sm:text-sm"
           style={{ animationDelay: "0.15s" }}
         >
-          <span aria-hidden className="inline-block size-1.5 bg-white/85" />
           SOFRA&nbsp;2026
         </p>
 
-        <h1 className="mt-7 font-display text-[clamp(2.6rem,7vw,5.5rem)] leading-[0.94] font-bold tracking-[-0.02em] text-white uppercase drop-shadow-[0_2px_16px_rgba(13,47,69,0.45)]">
+        <h1 className="mt-6 font-serif text-[clamp(2.8rem,6.5vw,5.2rem)] leading-[1.04] font-medium text-white drop-shadow-[0_2px_16px_rgba(18,56,64,0.5)]">
           <span className="line-mask">
-            <span
-              className="line-up title-outline-light"
-              style={{ animationDelay: "0.3s" }}
-            >
+            <span className="line-up" style={{ animationDelay: "0.3s" }}>
               Soirée
             </span>
           </span>
@@ -136,7 +132,7 @@ export default function LoginScreen() {
         {/* Sous-titre en petites capitales espacées : fait écho à l'eyebrow,
             composition symétrique autour du titre */}
         <p
-          className="appear mt-6 font-display text-xs font-medium tracking-[0.28em] text-white/85 uppercase drop-shadow-[0_1px_6px_rgba(13,47,69,0.7)] sm:text-sm"
+          className="appear mt-6 text-xs font-medium tracking-[0.2em] text-white/85 uppercase drop-shadow-[0_1px_6px_rgba(18,56,64,0.7)] sm:text-sm"
           style={{ animationDelay: "0.6s" }}
         >
           Mercredi 10 juin 2026&nbsp;·&nbsp;Cala&nbsp;d&rsquo;Orzu&nbsp;·&nbsp;Corse
@@ -168,7 +164,7 @@ export default function LoginScreen() {
               }}
               placeholder="Code d’accès"
               disabled={success}
-              className={`h-14 w-full rounded-full border bg-sea-deep/25 pr-16 pl-7 font-display text-sm tracking-[0.3em] text-white uppercase shadow-[0_4px_24px_rgba(13,47,69,0.35)] backdrop-blur-md transition outline-none placeholder:font-sans placeholder:tracking-normal placeholder:normal-case placeholder:text-white/70 focus:bg-sea-deep/35 sm:h-16 sm:pr-[4.5rem] sm:text-base ${
+              className={`h-14 w-full rounded-full border bg-sea-deep/25 pr-16 pl-7 text-sm tracking-[0.2em] text-white uppercase shadow-[0_4px_24px_rgba(18,56,64,0.35)] backdrop-blur-md transition outline-none placeholder:tracking-normal placeholder:normal-case placeholder:text-white/70 focus:bg-sea-deep/35 sm:h-16 sm:pr-[4.5rem] sm:text-base ${
                 error
                   ? "border-coral/90"
                   : "border-white/45 focus:border-white/85"
@@ -219,7 +215,7 @@ export default function LoginScreen() {
 
           <p
             role={error ? "alert" : undefined}
-            className={`mt-4 text-xs drop-shadow-[0_1px_6px_rgba(13,47,69,0.7)] transition-colors sm:text-sm ${
+            className={`mt-4 text-xs drop-shadow-[0_1px_6px_rgba(18,56,64,0.7)] transition-colors sm:text-sm ${
               error ? "text-coral" : "text-white/80"
             }`}
           >
@@ -230,7 +226,7 @@ export default function LoginScreen() {
 
       {/* Pied de page */}
       <footer className="relative z-10 px-6 pb-6 text-center sm:pb-8">
-        <p className="appear font-display text-[0.65rem] tracking-[0.18em] text-white/65 uppercase sm:text-xs" style={{ animationDelay: "0.9s" }}>
+        <p className="appear text-[0.65rem] tracking-[0.16em] text-white/65 uppercase sm:text-xs" style={{ animationDelay: "0.9s" }}>
           Accès réservé aux invités&nbsp;·&nbsp;Lemer&nbsp;Pax&nbsp;×&nbsp;SoFRa
         </p>
       </footer>

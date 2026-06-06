@@ -23,28 +23,6 @@ export default function GaleriePage() {
     ...new Set(photos.map((p) => p.photographer).filter(Boolean)),
   ];
 
-  const marqueeItems: Array<
-    { type: "text"; value: string } | { type: "logo"; src: string; height: string }
-  > = [
-    { type: "text", value: "SOFRA 2026" },
-    { type: "logo", src: "/logo-sofra.svg", height: "h-5" },
-    { type: "text", value: "Société Française de Radiopharmacie" },
-    { type: "text", value: "Mercredi 10 juin 2026" },
-    { type: "text", value: "Cala d’Orzu — Corse" },
-    { type: "logo", src: "/logo-lemer-pax.webp", height: "h-3.5" },
-    { type: "text", value: "Lemer Pax — Protecting Life" },
-    {
-      type: "text",
-      value:
-        photos.length > 0
-          ? `${photos.length} photographies`
-          : "Bientôt disponibles",
-    },
-    { type: "text", value: "Une soirée au bord de la Méditerranée" },
-    { type: "text", value: "Merci à tous les invités" },
-  ];
-  const marqueeHalf = Array.from({ length: 2 }).flatMap(() => marqueeItems);
-
   return (
     <div className="min-h-dvh overflow-x-clip">
       {/* Rideau d'entrée */}
@@ -67,7 +45,7 @@ export default function GaleriePage() {
             {archive.url && (
               <a
                 href="/api/download/zip"
-                className="flex items-center gap-2 font-display text-[0.7rem] leading-none font-medium tracking-[0.16em] text-ink/70 uppercase transition hover:text-ink"
+                className="flex items-center gap-2 text-[0.7rem] leading-none font-medium tracking-[0.14em] text-ink/70 uppercase transition hover:text-ink"
               >
                 <DownloadIcon className="shrink-0" />
                 <span className="hidden sm:inline">Tout télécharger</span>
@@ -79,7 +57,7 @@ export default function GaleriePage() {
             <form action="/api/logout" method="POST" className="flex items-center">
               <button
                 type="submit"
-                className="font-display text-[0.7rem] leading-none font-medium tracking-[0.16em] text-ink/45 uppercase transition hover:text-ink"
+                className="text-[0.7rem] leading-none font-medium tracking-[0.14em] text-ink/45 uppercase transition hover:text-ink"
               >
                 Déconnexion
               </button>
@@ -100,21 +78,17 @@ export default function GaleriePage() {
 
         <div className="relative mx-auto max-w-[1600px] px-4 pt-16 sm:px-8 sm:pt-24">
           <p
-            className="appear flex items-center gap-3 font-display text-[0.7rem] font-medium tracking-[0.3em] text-olive uppercase"
+            className="appear text-[0.7rem] font-medium tracking-[0.2em] text-olive uppercase"
             style={{ animationDelay: "1s" }}
           >
-            <span aria-hidden className="inline-block size-1.5 bg-olive" />
             SOFRA 2026&nbsp;—&nbsp;Mercredi 10 juin 2026
           </p>
 
           <div className="mt-8 grid gap-10 sm:grid-cols-12 sm:items-end sm:gap-8">
             <Parallax speed={0.08} className="sm:col-span-8">
-              <h1 className="font-display text-[clamp(3rem,8vw,7.5rem)] leading-[0.94] font-bold tracking-[-0.02em] text-sea-deep uppercase">
+              <h1 className="font-serif text-[clamp(3.2rem,7.5vw,7rem)] leading-[1.02] font-medium text-ink">
                 <span className="line-mask">
-                  <span
-                    className="line-up title-outline"
-                    style={{ animationDelay: "1.05s" }}
-                  >
+                  <span className="line-up" style={{ animationDelay: "1.05s" }}>
                     Soirée
                   </span>
                 </span>
@@ -125,7 +99,7 @@ export default function GaleriePage() {
                 </span>
               </h1>
               <p
-                className="appear mt-5 font-display text-sm font-medium tracking-[0.34em] text-sea-deep/60 uppercase sm:text-base"
+                className="appear mt-5 text-sm font-medium tracking-[0.2em] text-olive uppercase"
                 style={{ animationDelay: "1.35s" }}
               >
                 Édition 2026
@@ -157,7 +131,7 @@ export default function GaleriePage() {
                 />
               </div>
               <div className="border-t border-ink/15 pt-5">
-              <p className="font-display text-[0.65rem] font-medium tracking-[0.26em] text-ink/40 uppercase">
+              <p className="text-[0.65rem] font-medium tracking-[0.18em] text-ink/40 uppercase">
                 Le mot de l&rsquo;équipe
               </p>
               <p className="mt-4 max-w-sm text-sm leading-relaxed text-ink/65">
@@ -166,7 +140,7 @@ export default function GaleriePage() {
                 à revivre et à télécharger librement. Nous espérons avoir le
                 plaisir de vous retrouver pour la prochaine édition.
               </p>
-              <p className="mt-4 font-display text-[0.7rem] font-medium tracking-[0.18em] text-olive uppercase">
+              <p className="mt-4 text-[0.7rem] font-medium tracking-[0.16em] text-olive uppercase">
                 — L&rsquo;équipe Lemer&nbsp;Pax
               </p>
               </div>
@@ -174,35 +148,16 @@ export default function GaleriePage() {
           </div>
         </div>
 
-        {/* Bande défilante */}
-        <div className="marquee relative mt-14 border-y border-ink/15 py-3">
-          <div className="marquee-track font-display text-[0.7rem] font-medium tracking-[0.26em] text-ink/50 uppercase">
-            {[0, 1].map((half) => (
-              <span
-                key={half}
-                aria-hidden={half === 1}
-                className="flex shrink-0 items-center"
-              >
-                {marqueeHalf.map((item, i) => (
-                  <span key={i} className="flex items-center">
-                    {item.type === "text" ? (
-                      <span className="px-6">{item.value}</span>
-                    ) : (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={item.src}
-                        alt=""
-                        className={`mx-6 ${item.height} w-auto opacity-70`}
-                      />
-                    )}
-                    <span aria-hidden className="text-olive">
-                      ·
-                    </span>
-                  </span>
-                ))}
-              </span>
-            ))}
-          </div>
+        {/* Ligne de métadonnées, entre filets */}
+        <div className="relative mx-auto mt-14 flex max-w-[1600px] items-center justify-between border-t border-ink/15 px-4 py-4 sm:px-8">
+          <p className="text-[0.7rem] tracking-[0.16em] text-ink/50 uppercase">
+            Cala&nbsp;d&rsquo;Orzu&nbsp;·&nbsp;Corse
+          </p>
+          <p className="text-[0.7rem] tracking-[0.16em] text-ink/50 uppercase tabular-nums">
+            {photos.length > 0
+              ? `${photos.length} photographies`
+              : "Bientôt disponibles"}
+          </p>
         </div>
       </header>
 
@@ -212,16 +167,15 @@ export default function GaleriePage() {
 
       {/* Statement de clôture */}
       <footer className="border-t border-ink/10 px-4 py-16 text-center sm:px-8 sm:py-24">
-        <p className="font-display text-[clamp(2.4rem,6vw,5.5rem)] leading-[0.98] font-bold tracking-[-0.02em] text-sea-deep uppercase">
-          <span className="title-outline block">À très vite,</span>
-          <span className="block">on l&rsquo;espère</span>
+        <p className="font-serif text-[clamp(2.4rem,5.5vw,4.8rem)] leading-[1.05] font-medium text-ink italic">
+          À très vite, on l&rsquo;espère.
         </p>
         {photographers.length > 0 && (
-          <p className="mt-10 font-display text-[0.7rem] tracking-[0.2em] text-ink/45 uppercase">
+          <p className="mt-10 text-[0.7rem] tracking-[0.16em] text-ink/45 uppercase">
             Photographies&nbsp;: {photographers.join(" · ")}
           </p>
         )}
-        <p className="mt-3 font-display text-[0.7rem] tracking-[0.2em] text-ink/35 uppercase">
+        <p className="mt-3 text-[0.7rem] tracking-[0.16em] text-ink/35 uppercase">
           Galerie privée — merci de ne pas diffuser le lien ni le code
           d&rsquo;accès
         </p>

@@ -1,28 +1,18 @@
 import type { Metadata } from "next";
-import {
-  Cormorant_Garamond,
-  Hanken_Grotesk,
-  Space_Grotesk,
-} from "next/font/google";
+import { Hanken_Grotesk, Newsreader } from "next/font/google";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const newsreader = Newsreader({
   subsets: ["latin"],
-  weight: ["500", "600"],
-  variable: "--font-cormorant",
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
+  variable: "--font-newsreader",
   display: "swap",
 });
 
 const hanken = Hanken_Grotesk({
   subsets: ["latin"],
   variable: "--font-hanken",
-  display: "swap",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["500", "700"],
-  variable: "--font-grotesk",
   display: "swap",
 });
 
@@ -43,10 +33,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="fr"
-      className={`${cormorant.variable} ${hanken.variable} ${spaceGrotesk.variable}`}
-    >
+    <html lang="fr" className={`${newsreader.variable} ${hanken.variable}`}>
       <body>{children}</body>
     </html>
   );

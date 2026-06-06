@@ -1,22 +1,25 @@
 @import "tailwindcss";
 
 /*
- * Palette — soirée en paillote corse, exprimée par la matière et la lumière :
- * sable/lin en base, bleu Méditerranée profond en accent, vert olivier discret.
+ * Palette — dérivée de la photo du lieu (Cala d'Orzu) : sable/lin chaud en
+ * base, turquoise méditerranéen en accent signature, vert maquis profond,
+ * roche/tan chaud, texte bleu encre très sombre (jamais de noir pur).
  */
 @theme {
-  --color-linen: #faf7f1;
-  --color-sand: #ede4d3;
-  --color-sand-deep: #d9cbb2;
-  --color-sea: #14425e;
-  --color-sea-deep: #0d2f45;
-  --color-olive: #76795c;
-  --color-ink: #25262a;
+  --color-linen: #f3ecdd;
+  --color-sand: #eae0cb;
+  --color-sand-deep: #c8a87e;
+  --color-sea: #1f94a8;
+  --color-sea-deep: #123840;
+  --color-olive: #3c4d3a;
+  --color-ink: #1b2a33;
   --color-coral: #ff8d7d;
 
-  --font-serif: var(--font-cormorant), "Georgia", serif;
+  --font-serif: var(--font-newsreader), "Georgia", serif;
   --font-sans: var(--font-hanken), system-ui, sans-serif;
-  --font-display: var(--font-grotesk), system-ui, sans-serif;
+  /* L'identité éditoriale n'a plus de display dédiée : les libellés
+     utilisent la sans neutre, le serif porte le caractère. */
+  --font-display: var(--font-hanken), system-ui, sans-serif;
 
   --animate-kenburns: kenburns 55s ease-in-out infinite alternate;
   --animate-shake: shake 0.45s ease-in-out;
@@ -66,24 +69,6 @@ body {
   color: var(--color-linen);
 }
 
-/* Titre en contour (outline) — la ligne « creuse » du titre display */
-.title-outline {
-  color: transparent;
-  -webkit-text-stroke: 2px var(--color-sea-deep);
-}
-.title-outline-light {
-  color: transparent;
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.92);
-}
-@media (max-width: 640px) {
-  .title-outline {
-    -webkit-text-stroke-width: 1.3px;
-  }
-  .title-outline-light {
-    -webkit-text-stroke-width: 1.3px;
-  }
-}
-
 /* Grain photographique fin (bruit SVG tuilé), posé par-dessus la photo de fond. */
 .grain {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -128,9 +113,9 @@ body {
   pointer-events: none;
 }
 .curtain-label {
-  color: rgba(250, 247, 241, 0.8);
+  color: rgba(243, 236, 221, 0.8);
   font-size: 0.7rem;
-  letter-spacing: 0.34em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   animation: fade-out 0.45s ease 0.5s forwards;
 }
@@ -158,19 +143,6 @@ body {
   animation: fade-in 0.9s ease forwards;
 }
 
-/* --- Marquee ------------------------------------------------------------ */
-.marquee {
-  overflow: hidden;
-}
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 55s linear infinite;
-}
-@keyframes marquee {
-  to { transform: translateX(-50%); }
-}
-
 /* --- Lightbox ------------------------------------------------------------ */
 .lightbox-in {
   animation: fade-in 0.3s ease;
@@ -196,7 +168,6 @@ body {
   .animate-aurora-1,
   .animate-aurora-2,
   .animate-aurora-3,
-  .marquee-track,
   .lightbox-in,
   .lightbox-img {
     animation: none;

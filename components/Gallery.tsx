@@ -169,10 +169,11 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
                   />
                 </button>
 
-                {/* Numéro de planche, toujours visible */}
+                {/* Numéro de photo : utile au partage entre invités
+                    (« t'as vu la 45 ? ») — discret, lisible mais effacé */}
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute top-3 left-3 font-display text-[0.65rem] font-medium tracking-[0.2em] text-white/85 tabular-nums drop-shadow-[0_1px_4px_rgba(13,47,69,0.6)]"
+                  className="pointer-events-none absolute top-2 left-2.5 text-[0.6rem] font-medium tracking-[0.08em] text-white/70 tabular-nums drop-shadow-[0_1px_3px_rgba(27,42,51,0.55)]"
                 >
                   {String(index + 1).padStart(2, "0")}
                 </span>
