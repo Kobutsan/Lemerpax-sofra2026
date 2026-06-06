@@ -107,7 +107,27 @@ export default function Lightbox({ photos, index, onNavigate, onClose }: Props) 
         <div
           key={photo.id}
           className="lightbox-img absolute inset-2 sm:inset-6"
-          onClick={(e) => e.stopPropagation()}
+          onClick={(e) => {
+            e.stopPropagation();
+            // object-contain : l'<img> couvre tout le conteneur, bandes
+            // vides comprises. On calcule la zone réellement occupée par
+            // la photo — un clic en dehors ferme la lightbox.
+            const rect = e.currentTarget.getBoundingClientRect();
+            const scale = Math.min(
+              rect.width / photo.width,
+              rect.height / photo.height
+            );
+            const w = photo.width * scale;
+            const h = photo.height * scale;
+            const x0 = rect.left + (rect.width - w) / 2;
+            const y0 = rect.top + (rect.height - h) / 2;
+            const onPhoto =
+              e.clientX >= x0 &&
+              e.clientX <= x0 + w &&
+              e.clientY >= y0 &&
+              e.clientY <= y0 + h;
+            if (!onPhoto) onClose();
+          }}
         >
           <Image
             src={photo.displayUrl}
