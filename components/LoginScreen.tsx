@@ -53,11 +53,17 @@ export default function LoginScreen() {
   }
 
   return (
-    <main
-      className={`relative flex min-h-dvh flex-col overflow-hidden bg-sea-deep transition-opacity duration-700 ease-out ${
-        leaving ? "opacity-0" : "opacity-100"
-      }`}
-    >
+    <main className="relative flex min-h-dvh flex-col overflow-hidden bg-sea-deep">
+      {/* Sortie : fondu vers un calque bleu encre (même couleur que le
+          rideau de la galerie) — jamais vers le fond clair du body, sinon
+          flash blanc pendant la navigation */}
+      <div
+        aria-hidden
+        className={`fixed inset-0 z-[90] bg-sea-deep transition-opacity duration-700 ease-out ${
+          leaving ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      />
+
       {/* Rideau d'entrée, comme sur la galerie */}
       <div aria-hidden className="curtain">
         {/* eslint-disable-next-line @next/next/no-img-element */}
