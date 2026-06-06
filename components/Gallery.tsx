@@ -173,7 +173,7 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
                     (« t'as vu la 45 ? ») — discret, lisible mais effacé */}
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute top-2 left-2.5 text-[0.6rem] font-medium tracking-[0.08em] text-white/70 tabular-nums drop-shadow-[0_1px_3px_rgba(27,42,51,0.55)]"
+                  className="pointer-events-none absolute top-2.5 left-3 text-xs font-medium tracking-[0.08em] text-white tabular-nums drop-shadow-[0_1px_4px_rgba(27,42,51,0.65)]"
                 >
                   {String(index + 1).padStart(2, "0")}
                 </span>
