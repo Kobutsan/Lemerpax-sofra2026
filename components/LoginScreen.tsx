@@ -176,7 +176,7 @@ export default function LoginScreen() {
               }}
               placeholder="Code d’accès"
               disabled={success}
-              className={`h-14 w-full rounded-full border bg-sea-deep/25 pr-16 pl-7 text-sm tracking-[0.2em] text-white uppercase shadow-[0_4px_24px_rgba(18,56,64,0.35)] backdrop-blur-md transition outline-none placeholder:tracking-normal placeholder:normal-case placeholder:text-white/70 focus:bg-sea-deep/35 sm:h-16 sm:pr-[4.5rem] sm:text-base ${
+              className={`h-14 w-full rounded-full border bg-sea-deep/25 pr-16 pl-7 text-base tracking-[0.2em] text-white uppercase shadow-[0_4px_24px_rgba(18,56,64,0.35)] backdrop-blur-md transition outline-none placeholder:tracking-normal placeholder:normal-case placeholder:text-white/70 focus:bg-sea-deep/35 sm:h-16 sm:pr-[4.5rem] ${
                 error
                   ? "border-coral/90"
                   : "border-white/45 focus:border-white/85"
