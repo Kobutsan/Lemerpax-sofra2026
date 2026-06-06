@@ -109,12 +109,6 @@ export default function GaleriePage() {
                   </span>
                 </span>
               </h1>
-              <p
-                className="appear mt-5 text-sm font-medium tracking-[0.2em] text-olive uppercase"
-                style={{ animationDelay: "1.35s" }}
-              >
-                Édition 2026
-              </p>
             </Parallax>
 
             <div
