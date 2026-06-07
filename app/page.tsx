@@ -5,7 +5,7 @@ import { SESSION_COOKIE, verifySessionToken } from "@/lib/session";
 import LoginScreen from "@/components/LoginScreen";
 
 export const metadata: Metadata = {
-  title: "Lemer Pax × SoFRa",
+  title: "Lemer Pax x Sofra 2026",
 };
 
 export default async function AccessPage() {

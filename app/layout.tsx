@@ -17,7 +17,7 @@ const hanken = Hanken_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Lemer Pax × SoFRa — Galerie",
+  title: "Lemer Pax x Sofra 2026",
   description: "Galerie photo privée.",
   // Galerie privée : aucune indexation, sur toutes les pages
   // (doublé par app/robots.ts et le header X-Robots-Tag dans next.config.ts).

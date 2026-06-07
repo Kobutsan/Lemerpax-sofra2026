@@ -8,7 +8,7 @@ import Particles from "@/components/Particles";
 import { DownloadIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Galerie — Lemer Pax × SoFRa",
+  title: "Lemer Pax x Sofra 2026",
 };
 
 function formatSize(bytes: number): string {
